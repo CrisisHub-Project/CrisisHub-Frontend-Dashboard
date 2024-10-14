@@ -1,2 +1,2 @@
 # CrisisHub-Frontend-Dashboard
-Frontend by Xmausix | TypeScript+Tailwindcss website
+Frontend by Xmausix | TypeScript+Boostrap + jquery website
