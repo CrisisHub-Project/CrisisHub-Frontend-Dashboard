@@ -152,6 +152,49 @@
                             <label for="email" class="form-label">Email</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                         </div>
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">lastname</label>
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter your lastname" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Numer telefonu</label>
+                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-789" maxlength="12">
+                            <div class="form-text">Numer telefonu będzie automatycznie formatowany z myślnikami.</div>
+                        </div>
+
+                        <script>
+                            document.getElementById('phone').addEventListener('input', function (e) {
+                                let input = e.target.value;
+
+                                // Usuwa wszystko, co nie jest cyfrą
+                                input = input.replace(/\D/g, '');
+
+                                // Formatowanie numeru jako XXX-XXX-XXX
+                                if (input.length > 3 && input.length <= 6) {
+                                    input = input.slice(0, 3) + '-' + input.slice(3);
+                                } else if (input.length > 6) {
+                                    input = input.slice(0, 3) + '-' + input.slice(3, 6) + '-' + input.slice(6);
+                                }
+
+                                // Ustawia sformatowany numer z powrotem w polu
+                                e.target.value = input;
+                            });
+                        </script>
+
+                        <!-- brith date -->
+
+                        <div class="mb-3">
+                            <label for="birthdate" class="form-label">BirthDate</label>
+                            <input type="date" class="form-control" id="birthdate" name="birthdate" placeholder="Wybierz datę urodzenia">
+                        </div>
+                        <!-- Password -->
                         <div class="mb-3 form-password-toggle">
                             <label class="form-label" for="password">Password</label>
                             <div class="input-group input-group-merge">
